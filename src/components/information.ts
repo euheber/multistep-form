@@ -1,6 +1,6 @@
 export function information(): string {
   return `
-  <h2 class="text-4xl text-Marine-blue font-semibold">Informações Pessoais</h2>
+        <h2 class="text-4xl text-Marine-blue font-semibold">Informações Pessoais</h2>
         <span class="text-Cool-gray mb-8 block">Forneça seu nome, email e número de telefone</span>
           <form id="form" class="form space-y-5">
               <div class="form-field flex flex-col">
