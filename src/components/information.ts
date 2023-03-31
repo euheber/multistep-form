@@ -1,7 +1,6 @@
-export function information (info:string):any { 
-    const div = document.createElement('div')
-    div.textContent = `${info}`
+export function information(info: string): HTMLElement {
+  const div = document.createElement("div")
+  div.textContent = `${info}`
 
-
-    return div
+  return div
 }
