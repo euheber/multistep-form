@@ -1,4 +1,4 @@
-export function plans(info: string) :HTMLElement{
+export function plans() :HTMLElement{
     const div = document.createElement('div')
     return div
 }

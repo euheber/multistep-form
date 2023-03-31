@@ -17,5 +17,5 @@ export function information(): string {
                 <label for="phone" class="text-Purplish-blue font-semibold">Telefone</label>
                 <input type="text" id="number" placeholder="Digite seu número de telefone" class="border border-Cool-gray p-2 rounded-lg">
               </div>
-          </form>`
+        </form>`
 }
