@@ -12,9 +12,17 @@ const htmlList: Array<string> = [information(), plan(), addOns(), summary()]
 
 let activeForm = 0
 let activeBtn:HTMLButtonElement;
+
+
 const controlFormOfDisplay = (): void => {
   formSection.innerHTML = htmlList[activeForm]
   currentStep()
+  if(activeForm == 0){ 
+    returnBtn.classList.add('hidden')
+  
+  } else{ 
+    returnBtn.classList.remove('hidden')
+  }
 }
 
 const currentStep = ():void => {
@@ -29,10 +37,10 @@ const currentStep = ():void => {
   })
 }
 
-
 nextBtn.addEventListener("click", function () {
   currentStep()
   if (activeForm >= 3) return
+  
   activeForm++
   controlFormOfDisplay()
 })
