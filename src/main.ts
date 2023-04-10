@@ -8,6 +8,7 @@ const nextBtn = document.querySelector("#nextBtn") as HTMLButtonElement
 const returnBtn = document.querySelector("#returnBtn") as HTMLButtonElement
 const btns = document.querySelectorAll(".btn") as NodeListOf<HTMLButtonElement>
 
+
 const htmlList = [information(), plan(), addOns(), summary()]
 
 let activeForm = 0
@@ -32,7 +33,20 @@ const currentStep = (): void => {
   })
 }
 
+const checkForm = ():Boolean =>{
+  let formIsOk = true
+  const inputs =  document.querySelectorAll('input') as NodeListOf<HTMLInputElement>
+
+  inputs.forEach(input => { 
+    if(!input.value) formIsOk = false
+  })
+
+  return formIsOk
+}
+
+
 nextBtn.addEventListener("click", function (): void {
+  if(!checkForm()) return
   currentStep()
   if (activeForm >= 3) return
 
@@ -47,4 +61,15 @@ returnBtn.addEventListener("click", (): void => {
   controlFormOfDisplay()
 })
 
+
+type plan = { 
+  plan: string,
+  planPrice: number,
+  addon: string,
+  addPrice: number,
+
+  total():number
+}
+
 controlFormOfDisplay()
+
