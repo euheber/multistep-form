@@ -38,7 +38,11 @@ const checkForm = ():Boolean =>{
   const inputs =  document.querySelectorAll('input') as NodeListOf<HTMLInputElement>
 
   inputs.forEach(input => { 
-    if(!input.value) formIsOk = false
+    if(!input.value){
+      input.classList.add('border-Strawberry-red')
+      formIsOk = false
+      setTimeout(() => input.classList.remove('border-Strawberry-red'),3000)
+    }
   })
 
   return formIsOk
@@ -67,8 +71,6 @@ type plan = {
   planPrice: number,
   addon: string,
   addPrice: number,
-
-  total():number
 }
 
 controlFormOfDisplay()
