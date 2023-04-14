@@ -1,7 +1,5 @@
 import { information } from "./components/information"
 import { plan } from "./components/choosePlan"
-import { addOns } from "./components/addOn"
-import { summary } from "./components/summary"
 
 const formSection = document.querySelector("#form") as HTMLDivElement
 const nextBtn = document.querySelector("#nextBtn") as HTMLButtonElement
