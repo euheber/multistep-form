@@ -3,19 +3,21 @@ import { plan } from "./components/choosePlan"
 import { addOns } from "./components/addOn"
 import { summary } from "./components/summary"
 
-const formSection = document.querySelector("#form") as HTMLElement
+const formSection = document.querySelector("#form") as HTMLDivElement
 const nextBtn = document.querySelector("#nextBtn") as HTMLButtonElement
 const returnBtn = document.querySelector("#returnBtn") as HTMLButtonElement
 const btns = document.querySelectorAll(".btn") as NodeListOf<HTMLButtonElement>
 
-
-const htmlList = [information(), plan(), addOns(), summary()]
+const htmlList = [information(), plan()]
+let activeChild: HTMLElement;
 
 let activeForm = 0
 let activeBtn: HTMLButtonElement
 
 const controlFormOfDisplay = (): void => {
-  formSection.innerHTML = htmlList[activeForm]
+  if(activeChild) formSection.removeChild(activeChild)
+  formSection.appendChild(htmlList[activeForm])
+  activeChild = htmlList[activeForm]
   currentStep()
   activeForm == 0
     ? returnBtn.classList.add("hidden")
@@ -49,11 +51,23 @@ const checkForm = ():Boolean =>{
 }
 
 
+const checkPlan = ():void => { 
+ if(activeForm >= 1){
+  const plans = document.querySelectorAll('.plan') as NodeListOf<HTMLDivElement>
+  plans.forEach(plan => {
+    plan.addEventListener('click', ():void=>{console.log('olá');
+    })
+  })
+ }
+}
+
+
+
 nextBtn.addEventListener("click", function (): void {
+  if (activeForm >= 3) return
   if(!checkForm()) return
   currentStep()
-  if (activeForm >= 3) return
-
+  checkPlan()
   activeForm++
   controlFormOfDisplay()
 })
@@ -65,13 +79,6 @@ returnBtn.addEventListener("click", (): void => {
   controlFormOfDisplay()
 })
 
-
-type plan = { 
-  plan: string,
-  planPrice: number,
-  addon: string,
-  addPrice: number,
-}
 
 controlFormOfDisplay()
 
