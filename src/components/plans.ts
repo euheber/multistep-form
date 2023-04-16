@@ -1,4 +1,3 @@
-let activeBox: HTMLDivElement
 export function plans(plan: string, price: number): HTMLDivElement {
   const box = document.createElement("div")
   box.classList.add(
