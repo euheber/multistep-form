@@ -37,7 +37,6 @@ export function information(): HTMLFormElement {
   inputEmail.classList.add('border', 'border-Cool-gray', 'p-2', 'rounded-lg', 'inputField', 'cursor-pointer', 'hover:border-Purplish-blue', 'transition', 'duration-75')
   emailFormField.append(emailLabel, inputEmail)
 
-
   const passwordFormField = document.createElement('div')
   passwordFormField.classList.add('form-field', 'flex', 'flex-col')
   const passwordLabel = document.createElement('label')
