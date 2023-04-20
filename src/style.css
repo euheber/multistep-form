@@ -11,7 +11,7 @@
 }
 
 
-#default-checkbox:has(input:checked){ 
+#label:has(input:checked){ 
     border: 1px solid hsl(243, 100%, 62%);
 }
 

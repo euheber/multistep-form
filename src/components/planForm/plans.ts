@@ -1,4 +1,4 @@
-export function plans(plan: string, price: number): HTMLDivElement {
+export function plans(plan: string, price: number, active?:string): HTMLDivElement {
   const box = document.createElement("div")
   box.classList.add(
     "border",
@@ -11,7 +11,8 @@ export function plans(plan: string, price: number): HTMLDivElement {
     "hover:border-Purplish-blue",
     "transition",
     "duration-150",
-    "cursor-pointer"
+    "cursor-pointer",
+    `${active}`
   )
 
   const img = document.createElement("img")
@@ -30,7 +31,7 @@ export function plans(plan: string, price: number): HTMLDivElement {
   box.append(img, h1, span)
   box.addEventListener("click", () => {
     const boxes = document.querySelectorAll(".plan") as NodeListOf<HTMLDivElement>
-    boxes.forEach((box) => box.classList.remove("border-Purplish-blue"))
+    boxes.forEach(box => box.classList.remove("border-Purplish-blue"))
 
     box.classList.add("border-Purplish-blue")
   })
