@@ -1,4 +1,4 @@
-export function plans(plan: string, price: number, active?:string): HTMLDivElement {
+export function plans(plan: string, price: number, type:string,  active?:string,): HTMLDivElement {
   const box = document.createElement("div")
   box.classList.add(
     "border",
@@ -25,7 +25,7 @@ export function plans(plan: string, price: number, active?:string): HTMLDivEleme
   h1.classList.add("text-Marine-blue", "font-semibold")
 
   const span = document.createElement("span")
-  span.textContent = `R$${price},00/mes`
+  span.textContent = `R$${price},00/${type}`
   span.classList.add("text-Cool-gray", "text-sm")
 
   box.append(img, h1, span)

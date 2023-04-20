@@ -1,12 +1,11 @@
-export function addonCheckbox(title:string, description:string, price:number):HTMLLabelElement { 
+export function addonCheckbox(title:string, description:string, price:number, checkboxNameId:string):HTMLLabelElement { 
     const label = document.createElement('label')
-    label.classList.add('border', 'border-Cool-gray', 'rounded-lg', 'hover:border-Purplish-blue', 'w-full', 'cursor-pointer', 'transition', 'duration-150', 'flex', 'items-center', 'gap-4', 'p-2')
-    label.setAttribute('id', 'label')
-    label.htmlFor = 'default-checkbox'
+    label.classList.add('label','border', 'border-Cool-gray', 'rounded-lg', 'hover:border-Purplish-blue', 'w-full', 'cursor-pointer', 'transition', 'duration-150', 'flex', 'items-center', 'gap-4', 'p-2')
+    label.htmlFor = checkboxNameId
 
     const input = document.createElement('input')
     input.type = 'checkbox'
-    input.setAttribute('id', 'default-checkbox')
+    input.setAttribute('id', checkboxNameId)
     input.classList.add('accent-Marine-blue',)
 
     const addonContainer = document.createElement('div')

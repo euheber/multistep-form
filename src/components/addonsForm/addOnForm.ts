@@ -13,6 +13,6 @@ export function addonsForm(): HTMLFormElement {
 
   header.append(title, description)
 
-  form.append(header, addonCheckbox('Serviços online', 'Acesso a jogos multiplayer', 10), addonCheckbox('Mais espaço', '1TB de espaço extra na nuvem', 20), addonCheckbox('Perfil customizavel', 'Customize o tema do seu perfil', 30))
+  form.append(header, addonCheckbox('Serviços online', 'Acesso a jogos multiplayer', 10, 'online'), addonCheckbox('Mais espaço', '1TB de espaço extra na nuvem', 20, 'space'), addonCheckbox('Perfil customizavel', 'Customize o tema do seu perfil', 30, 'profile'))
   return form
 }

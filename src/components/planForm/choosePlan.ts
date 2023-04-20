@@ -1,8 +1,8 @@
 import { plans } from "./plans"
 
-let Arcade = plans("Arcade", 9, 'border-Purplish-blue')
-let Advanced = plans("Advanced", 12)
-let Pro = plans("Pro", 15)
+let Arcade = plans("Arcade", 9, 'mês', 'border-Purplish-blue')
+let Advanced = plans("Advanced", 12, 'mês')
+let Pro = plans("Pro", 15, 'mês')
 
 export function plan(): HTMLFormElement {
   const form = document.createElement("form")
@@ -54,9 +54,9 @@ export function plan(): HTMLFormElement {
   checkBoxInput.addEventListener("click", function () {
     plansBox.innerHTML = ""
     if (this.checked) {
-      Arcade = plans("Arcade", 12, 'border-Purplish-blue')
-      Advanced = plans("Advanced", 15)
-      Pro = plans("Pro", 18)
+      Arcade = plans("Arcade", 90,'ano', 'border-Purplish-blue')
+      Advanced = plans("Advanced", 120, 'ano')
+      Pro = plans("Pro", 150, 'ano')
       plansBox.append(Arcade, Advanced, Pro)
       monthlyOption.classList.remove('text-Marine-blue')
       monthlyOption.classList.add('text-Cool-gray')
@@ -64,9 +64,9 @@ export function plan(): HTMLFormElement {
       return
     }
 
-    Arcade = plans("Arcade", 9, 'border-Purplish-blue')
-    Advanced = plans("Advanced", 12)
-    Pro = plans("Pro", 15)
+    Arcade = plans("Arcade", 9, 'mês', 'border-Purplish-blue')
+    Advanced = plans("Advanced", 12, 'mês')
+    Pro = plans("Pro", 15, 'mês')
     monthlyOption.classList.add('text-Marine-blue')
     yearOption.classList.remove('text-Marine-blue')
     plansBox.append(Arcade, Advanced, Pro)
