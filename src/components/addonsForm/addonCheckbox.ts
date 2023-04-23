@@ -7,7 +7,7 @@ export function addonCheckbox(title:string, description:string, price:number, ch
     input.type = 'checkbox'
     input.setAttribute('id', checkboxNameId)
     input.classList.add('accent-Marine-blue',)
-
+    
     const addonContainer = document.createElement('div')
     const addonTitle = document.createElement('h1')
     addonTitle.classList.add('text-sm', 'font-semibold', 'text-Marine-blue')
@@ -16,7 +16,7 @@ export function addonCheckbox(title:string, description:string, price:number, ch
     addOndescription.classList.add('text-Cool-gray', 'text-sm')
     addOndescription.textContent = description
     addonContainer.append(addonTitle, addOndescription)
-    
+
     const addonPriceBox = document.createElement('div')
     addonPriceBox.classList.add('ml-auto')
     const addonPrice = document.createElement('p')

@@ -51,23 +51,10 @@ const checkForm = ():Boolean =>{
 }
 
 
-const checkPlan = ():void => { 
- if(activeForm >= 1){
-  const plans = document.querySelectorAll('.plan') as NodeListOf<HTMLDivElement>
-  plans.forEach(plan => {
-    plan.addEventListener('click', ():void=>{console.log('olá');
-    })
-  })
- }
-}
-
-
-
 nextBtn.addEventListener("click", function (): void {
   if (activeForm >= 3) return
   if(!checkForm()) return
   currentStep()
-  checkPlan()
   activeForm++
   controlFormOfDisplay()
 })

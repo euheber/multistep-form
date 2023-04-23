@@ -19,5 +19,6 @@ export function information(): HTMLFormElement {
   const phoneField = input('phone', 'Telefone', 'tel', 'Digite seu telefone', 'phone')
 
   form.append(container, nameField, emailField, phoneField)
+  
   return form
 }
