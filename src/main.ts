@@ -1,14 +1,14 @@
 import { information } from "./components/informationForm/information"
 import { plan } from "./components/planForm/choosePlan"
 import { addonsForm } from "./components/addonsForm/addOnForm"
-
+import { summary } from "./components/summaryForm/summary"
 
 const formSection = document.querySelector("#form") as HTMLDivElement
 const nextBtn = document.querySelector("#nextBtn") as HTMLButtonElement
 const returnBtn = document.querySelector("#returnBtn") as HTMLButtonElement
 const btns = document.querySelectorAll(".btn") as NodeListOf<HTMLButtonElement>
 
-const htmlList = [information(), plan(), addonsForm()]
+const htmlList = [information(), plan(), addonsForm(), summary()]
 let activeChild: HTMLElement;
 
 let activeForm = 0

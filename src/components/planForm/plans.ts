@@ -1,4 +1,14 @@
-export function plans(plan: string, price: number, type:string,  active?:string,): HTMLDivElement {
+interface Mask{ 
+  plan:string,
+  price:number,
+  type:string
+}
+export function plans(
+  plan: string,
+  price: number,
+  type: string,
+  active?: string
+): HTMLDivElement {
   const box = document.createElement("div")
   box.classList.add(
     "border",
@@ -31,9 +41,14 @@ export function plans(plan: string, price: number, type:string,  active?:string,
   box.append(img, h1, span)
   box.addEventListener("click", () => {
     const boxes = document.querySelectorAll(".plan") as NodeListOf<HTMLDivElement>
-    boxes.forEach(box => box.classList.remove("border-Purplish-blue"))
-
+    boxes.forEach((box) => box.classList.remove("border-Purplish-blue"))
     box.classList.add("border-Purplish-blue")
+
+
   })
+
   return box
 }
+
+let obj:Mask;
+
