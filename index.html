@@ -9,18 +9,18 @@
   </head>
   <body class="bg-Light-blue flex justify-center items-center h-screen">
     <main
-      class="w-3/4 min-h-[500px] p-5 rounded-lg bg-Alabaster flex items-start gap-16"
+      class=" w-full  rounded-lg bg-Light-blue  flex flex-col items-center sm:flex-row"
     >
       <section
-        class="w-64 min-h-[500px] rounded-lg p-6 flex flex-col space-y-5 options"
-      >
+        class="w-full  rounded-lg flex justify-center items-center h-32 gap-2  options">
+
         <div class="flex items-center gap-4">
           <button
             class="rounded-full w-8 h-8 text-lg border-2 border-Pastel-blue cursor-default btn"
           >
             1
           </button>
-          <div>
+          <div class="hidden">
             <span class="text-Light-gray text-xs">Passo 1</span>
             <p class="text-White font-medium -mt-1">Suas informações</p>
           </div>
@@ -32,7 +32,7 @@
           >
             2
           </button>
-          <div>
+          <div class="hidden">
             <span class="text-Light-gray text-xs">Passo 2</span>
             <p class="text-White font-medium -mt-1">Selecione seu plano</p>
           </div>
@@ -44,7 +44,7 @@
           >
             3
           </button>
-          <div>
+          <div class="hidden">
             <span class="text-Light-gray text-xs">Passo 3</span>
             <p class="text-White font-medium -mt-1">Adicional</p>
           </div>
@@ -56,16 +56,16 @@
           >
             4
           </button>
-          <div>
+          <div class="hidden">
             <span class="text-Light-gray text-xs">Passo 4</span>
             <p class="text-White font-medium -mt-1">Resumo</p>
           </div>
         </div>
       </section>
 
-      <section class="mt-10 flex flex-col w-2/4">
+      <section class=" flex flex-col w-2/4 -mt-7 bg-White p-5 rounded-lg w-5/6">
         <div id="form" class="min-h-[380px]">
-            
+   
         </div>
 
         
@@ -73,9 +73,7 @@
           <button class="text-Cool-gray font-semibold hover:text-Marine-blue transition duration-200" id="returnBtn">Voltar</button>
           <button class="text-White font-semibold border p-2 rounded-lg bg-Marine-blue hover:bg-Purplish-blue transition duration-150 ml-auto" id="nextBtn">Próxima etapa</button>
         </div>
-      </section>
-
- 
+      </section>   
     </main>
     <script type="module" src="/src/main.ts"></script>
   </body>
