@@ -7,7 +7,7 @@ export function information(): HTMLFormElement {
   const container = document.createElement('div')
   const h1 = document.createElement('h1')
   h1.textContent = 'Informações Pessoais'
-  h1.classList.add('text-4xl', 'text-Marine-blue', 'font-semibold')
+  h1.classList.add('text-2xl', 'text-Marine-blue', 'font-semibold')
   const p = document.createElement('p')
   p.classList.add('text-Cool-gray', 'mb-5')
   p.textContent = 'Forneça seu nome, email e número de telefone'

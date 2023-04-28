@@ -1,3 +1,4 @@
+import addonResume from "./addonResume"
 
 export function summary():HTMLElement{ 
   const container = document.createElement('section')
@@ -19,35 +20,18 @@ export function summary():HTMLElement{
   planType.classList.add( 'flex', 'items-center', 'justify-between')
   const planTitle = document.createElement('h1')
   planTitle.classList.add('text-md', 'text-Marine-blue', 'font-bold')
-  planTitle.textContent = `Mensal`
+  planTitle.textContent = `Arcade`
   const planPrice = document.createElement('span')
   planPrice.classList.add('text-md', 'text-Marine-blue', 'font-semibold')
-  planPrice.textContent = `R$9,00/ Mensal`
+  planPrice.textContent = `R$9,00/ Mês`
   planType.append(planTitle, planPrice)
   planContainer.append(planType)
-  container.append(header, planContainer)
-
-
   
+  const addon = addonResume('Serviços online', 20)
+  
+  container.append(header, planContainer, addon)
+
     return container
 }
 
 
-
-`
-      <div class="flex justify-between mt-3">
-        <p class="text-Cool-gray">Serviços online</p>
-        <p class="text-md font-semibold text-Marine-blue">+R$10,00/mês</p>
-      </div>
-      <div class="flex justify-between mt-3">
-        <p class="text-Cool-gray">Mias espaço</p>
-        <p class="text-md font-semibold text-Marine-blue">+R$20,00/mês</p>
-      </div>
-
-      <div class="flex justify-between mt-10">
-        <p class="text-Cool-gray">Total (por mês)</p>
-        <p class="text-lg font-bold text-Purplish-blue">R$39,00/mês</p>
-      </div>
-    </div>
-    
-`

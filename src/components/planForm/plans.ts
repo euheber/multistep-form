@@ -1,8 +1,3 @@
-interface Mask{ 
-  plan:string,
-  price:number,
-  type:string
-}
 export function plans(
   plan: string,
   price: number,
@@ -40,15 +35,51 @@ export function plans(
 
   box.append(img, h1, span)
   box.addEventListener("click", () => {
-    const boxes = document.querySelectorAll(".plan") as NodeListOf<HTMLDivElement>
+    const boxes = document.querySelectorAll(
+      ".plan"
+    ) as NodeListOf<HTMLDivElement>
     boxes.forEach((box) => box.classList.remove("border-Purplish-blue"))
     box.classList.add("border-Purplish-blue")
 
-
+    objetos.subscribe(plan, type, price)
+    objetos.notify(plan)
+    console.log(objetos);
   })
 
   return box
 }
 
-let obj:Mask;
+class Observable {
+  // cada instância da classe Observer
+  // começa com um array vazio de observadores/observers
+  // que reagem a uma mudança de estado
+  constructor(public observers:string[] = []) {}
 
+  // adicione a capacidade de inscrever um novo objeto / Elemento DOM
+  // essencialmente, adicione algo ao array de observadores
+  subscribe(plan:string, type:string, price:number) {
+    if(this.observers.length > 0) this.observers.length = 0
+    this.observers.push(plan);
+    this.observers.push(type);
+    this.observers.push(price.toString());
+  }
+
+  // adicione a capacidade de cancelar a inscrição de um objeto em particular
+  // essencilamente, remove algum item do array de observadores
+  unsubscribe(plan:string) {
+    this.observers = this.observers.filter(subscriber => subscriber !== plan);
+  }
+
+  // atualiza todos os objetos inscritos / Elementos DOM
+  // e passa alguns dados para cada um deles
+  notify(data:string) {
+    if(this.observers.length > 0) this.observers.pop()
+    this.observers.push(data);
+  }
+}
+
+
+const objetos = new Observable()
+
+
+export default objetos

@@ -52,14 +52,19 @@ const checkForm = ():Boolean =>{
 
 
 nextBtn.addEventListener("click", function (): void {
-  if (activeForm >= 3) return
+  if (activeForm >=3) return
   if(!checkForm()) return
+  
   currentStep()
   activeForm++
+  if (activeForm >=3) nextBtn.textContent = 'Finalizar'
   controlFormOfDisplay()
 })
 
 returnBtn.addEventListener("click", (): void => {
+  if (activeForm <= 3){
+    nextBtn.textContent = 'Próxima etapa'
+  }
   currentStep()
   if (activeForm <= 0) return
   activeForm--
