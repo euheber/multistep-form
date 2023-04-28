@@ -10,7 +10,7 @@ export function addonCheckbox(title:string, description:string, price:number, ch
     
     const addonContainer = document.createElement('div')
     const addonTitle = document.createElement('h1')
-    addonTitle.classList.add('text-sm', 'font-semibold', 'text-Marine-blue')
+    addonTitle.classList.add('text-sm', 'font-bold', 'text-Marine-blue')
     addonTitle.textContent = title
     const addOndescription = document.createElement('p')
     addOndescription.classList.add('text-Cool-gray', 'text-sm')

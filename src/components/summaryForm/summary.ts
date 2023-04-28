@@ -7,7 +7,7 @@ export function summary():HTMLElement{
 
   const header = document.createElement('div')
   const title = document.createElement('h1')
-  title.classList.add('text-4xl', 'text-Marine-blue', 'font-semibold')
+  title.classList.add('text-2xl', 'text-Marine-blue', 'font-semibold')
   title.textContent = 'Revisando'
   const description = document.createElement('p')
   description.classList.add('text-Cool-gray')

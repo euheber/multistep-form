@@ -10,30 +10,36 @@ export function plans(
     "plan",
     "border-Cool-gray",
     "rounded-lg",
-    "w-32",
-    "h-32",
     "p-2",
     "hover:border-Purplish-blue",
     "transition",
     "duration-150",
     "cursor-pointer",
+    "w-full",
+    "flex",
+    "gap-5",
+    "items-center",
     `${active}`
   )
 
   const img = document.createElement("img")
   img.src = `/assets/images/icon-${plan.toLowerCase()}.svg`
   img.alt = "Icone arcade"
-  img.classList.add("mb-5")
 
-  const h1 = document.createElement("h1")
-  h1.textContent = plan
-  h1.classList.add("text-Marine-blue", "font-semibold")
+  
+
+
+  const title = document.createElement("h1")
+  title.textContent = plan
+  title.classList.add("text-Marine-blue", "font-semibold")
 
   const span = document.createElement("span")
   span.textContent = `R$${price},00/${type}`
   span.classList.add("text-Cool-gray", "text-sm")
 
-  box.append(img, h1, span)
+  const planPrice = document.createElement('div')
+  planPrice.append(title, span)
+  box.append(img, planPrice)
   box.addEventListener("click", () => {
     const boxes = document.querySelectorAll(
       ".plan"

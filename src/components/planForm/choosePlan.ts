@@ -11,7 +11,7 @@ export function plan(): HTMLFormElement {
   const header = document.createElement("div")
   const h1 = document.createElement("h1")
   h1.textContent = "Selecione seu plano"
-  h1.classList.add("text-4xl", "text-Marine-blue", "font-semibold")
+  h1.classList.add("text-2xl", "text-Marine-blue", "font-semibold")
   const p = document.createElement("p")
   p.textContent = "Escolha entre uma assinatura mensal ou anual"
   p.classList.add("text-Cool-gray", "mb-5")
@@ -20,7 +20,7 @@ export function plan(): HTMLFormElement {
 
   const plansBox = document.createElement("div")
   plansBox.append(Arcade, Advanced, Pro)
-  plansBox.classList.add("flex", "gap-2")
+  plansBox.classList.add("flex", "flex-col", "gap-2")
 
   const switchContainer = document.createElement("div")
   switchContainer.classList.add(
