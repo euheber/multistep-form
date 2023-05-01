@@ -1,6 +1,8 @@
 import addonResume from "./addonResume"
-
+import PlanContext from "../../store/planState"
 export function summary():HTMLElement{ 
+  console.log(PlanContext.getInstance().getPlan())
+
   const container = document.createElement('section')
   container.classList.add('flex', 'flex-col', 'space-y-5')
 
@@ -18,12 +20,15 @@ export function summary():HTMLElement{
   planContainer.classList.add('border-b', 'border-Light-gray', 'pb-6')
   const planType = document.createElement('div')
   planType.classList.add( 'flex', 'items-center', 'justify-between')
+
   const planTitle = document.createElement('h1')
+  planTitle.setAttribute('id', 'planTitle')
   planTitle.classList.add('text-md', 'text-Marine-blue', 'font-bold')
-  planTitle.textContent = `Arcade`
+  planTitle.textContent = PlanContext.getInstance().getPlan().name
+
   const planPrice = document.createElement('span')
   planPrice.classList.add('text-md', 'text-Marine-blue', 'font-semibold')
-  planPrice.textContent = `R$9,00/ Mês`
+  planPrice.textContent = `R$${PlanContext.getInstance().getPlan().price},00/ ${PlanContext.getInstance().getPlan().type}`
   planType.append(planTitle, planPrice)
   planContainer.append(planType)
   
@@ -35,3 +40,9 @@ export function summary():HTMLElement{
 }
 
 
+export function updateSummaryValue() {
+  const titleElement = document.querySelector('#planTitle') as HTMLElement
+  
+  titleElement.textContent = PlanContext.getInstance().getPlan().name
+
+}

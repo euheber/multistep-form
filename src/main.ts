@@ -8,7 +8,7 @@ const nextBtn = document.querySelector("#nextBtn") as HTMLButtonElement
 const returnBtn = document.querySelector("#returnBtn") as HTMLButtonElement
 const btns = document.querySelectorAll(".btn") as NodeListOf<HTMLButtonElement>
 
-const htmlList = [information(), plan(), addonsForm(), summary()]
+const htmlList = [information, plan, addonsForm, summary]
 let activeChild: HTMLElement;
 
 let activeForm = 0
@@ -16,8 +16,10 @@ let activeBtn: HTMLButtonElement
 
 const controlFormOfDisplay = (): void => {
   if(activeChild) formSection.removeChild(activeChild)
-  formSection.appendChild(htmlList[activeForm])
-  activeChild = htmlList[activeForm]
+
+  let htmlContent = htmlList[activeForm]()
+  formSection.appendChild(htmlContent)
+  activeChild = htmlContent
   currentStep()
   activeForm == 0
     ? returnBtn.classList.add("hidden")
