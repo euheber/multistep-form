@@ -11,10 +11,6 @@
 }
 
 
-.label:has(input:checked){ 
-  border: 1px solid hsl(243, 100%, 62%);
-}
-
 .switch {
     position: relative;
     display: inline-block;
