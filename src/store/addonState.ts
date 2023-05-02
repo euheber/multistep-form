@@ -17,6 +17,15 @@ class addonState  {
     }
 
     cleanArray(){this.addon = []}
+
+    checkAddon(addon:{title:string}):boolean{ 
+      let activeCheckBox:boolean;
+      const index = this.addon.findIndex(item => item.title === addon.title)
+
+      index === -1 ? activeCheckBox = false : activeCheckBox = true 
+       
+      return activeCheckBox
+    }
 }
 
 

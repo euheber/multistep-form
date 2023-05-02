@@ -42,6 +42,15 @@ export function summary():HTMLElement{
     container.append(div)
   })
 
+
+  const total = document.createElement('div')
+  total.classList.add('mt-30', 'border')
+  const price = document.createElement('p')
+  const sum = addonState.getInstance().getAddon().reduce((acc:number, cur:{price:number})=>{ return acc + cur.price},0) +   PlanContext.getInstance().getPlan().price
+  price.textContent = `${sum}`
+  total.append(price)
+
+  container.append(total)
     return container
 }
 

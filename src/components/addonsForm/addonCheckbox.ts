@@ -1,7 +1,5 @@
 import addonState from "../../store/addonState"
 
-let activeCheckbox:Array<string> = []
-
 export function addonCheckbox(title:string, description:string, price:number, checkboxNameId:string):HTMLLabelElement { 
     const label = document.createElement('label')
     label.classList.add('label','border', 'border-Cool-gray', 'rounded-lg', 'hover:border-Purplish-blue', 'w-full', 'cursor-pointer', 'transition', 'duration-150', 'flex', 'items-center', 'gap-4', 'p-2')
@@ -12,20 +10,17 @@ export function addonCheckbox(title:string, description:string, price:number, ch
     input.setAttribute('id', checkboxNameId)
     input.classList.add('accent-Marine-blue',)
     
-    const index = activeCheckbox.indexOf(title)
-    index === -1 ? input.checked = false : input.checked = true
-
+  
+    addonState.getInstance().checkAddon({title:title}) ? input.checked = true : input.checked = false
+    
  
     input.addEventListener('change', function(){ 
         if(this.checked){
             label.classList.add( 'border-Purplish-blue')
-            addonState.getInstance().setAddon(title, price)
-            activeCheckbox.push(title)
-            
+            addonState.getInstance().setAddon(title, price)             
         } else {
             label.classList.remove( 'border-Purplish-blue')
-            addonState.getInstance().removeAddon({title:title})
-            activeCheckbox.splice(index, 1);
+            addonState.getInstance().removeAddon({title:title})   
         }
     
     })

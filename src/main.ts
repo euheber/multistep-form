@@ -2,7 +2,6 @@ import { information } from "./components/informationForm/information"
 import { plan } from "./components/planForm/choosePlan"
 import { addonsForm } from "./components/addonsForm/addOnForm"
 import { summary } from "./components/summaryForm/summary"
-import addonState from "./store/addonState"
 
 
 const formSection = document.querySelector("#form") as HTMLDivElement
@@ -66,7 +65,6 @@ nextBtn.addEventListener("click", function (): void {
 })
 
 returnBtn.addEventListener("click", (): void => {
-  addonState.getInstance().cleanArray()
   if (activeForm <= 3){
     nextBtn.textContent = 'Próxima etapa'
   }
