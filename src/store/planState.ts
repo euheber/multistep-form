@@ -13,10 +13,6 @@ class PlanContext {
 
     static instance = new PlanContext();
 
-    constructor() {
-
-    }
-
     static getInstance() {
         return this.instance;
     }

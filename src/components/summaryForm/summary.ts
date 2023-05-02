@@ -1,7 +1,7 @@
 import addonResume from "./addonResume"
 import PlanContext from "../../store/planState"
+
 export function summary():HTMLElement{ 
-  console.log(PlanContext.getInstance().getPlan())
 
   const container = document.createElement('section')
   container.classList.add('flex', 'flex-col', 'space-y-5')
@@ -28,7 +28,7 @@ export function summary():HTMLElement{
 
   const planPrice = document.createElement('span')
   planPrice.classList.add('text-md', 'text-Marine-blue', 'font-semibold')
-  planPrice.textContent = `R$${PlanContext.getInstance().getPlan().price},00/ ${PlanContext.getInstance().getPlan().type}`
+  planPrice.textContent = `R$${PlanContext.getInstance().getPlan().price},00/${PlanContext.getInstance().getPlan().type}`
   planType.append(planTitle, planPrice)
   planContainer.append(planType)
   
@@ -40,9 +40,3 @@ export function summary():HTMLElement{
 }
 
 
-export function updateSummaryValue() {
-  const titleElement = document.querySelector('#planTitle') as HTMLElement
-  
-  titleElement.textContent = PlanContext.getInstance().getPlan().name
-
-}
