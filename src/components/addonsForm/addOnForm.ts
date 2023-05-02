@@ -1,5 +1,8 @@
 import { addonCheckbox } from "./addonCheckbox"
+
+
 export function addonsForm(): HTMLFormElement {
+
   const form = document.createElement("form")
   form.classList.add("flex", "flex-col", "gap-4")
 

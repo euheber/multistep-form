@@ -1,7 +1,9 @@
-import addonResume from "./addonResume"
 import PlanContext from "../../store/planState"
+import addonState from "../../store/addonState"
+import addonResume from "./addonResume"
 
 export function summary():HTMLElement{ 
+  const addons = addonState.getInstance().getAddon()
 
   const container = document.createElement('section')
   container.classList.add('flex', 'flex-col', 'space-y-5')
@@ -32,9 +34,13 @@ export function summary():HTMLElement{
   planType.append(planTitle, planPrice)
   planContainer.append(planType)
   
-  const addon = addonResume('Serviços online', 20)
-  
-  container.append(header, planContainer, addon)
+
+  container.append(header, planContainer)
+
+  addons.forEach(item => {     
+    const div = addonResume(item.title, item.price)
+    container.append(div)
+  })
 
     return container
 }

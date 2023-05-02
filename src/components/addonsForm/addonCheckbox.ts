@@ -1,3 +1,5 @@
+import addonState from "../../store/addonState"
+
 export function addonCheckbox(title:string, description:string, price:number, checkboxNameId:string):HTMLLabelElement { 
     const label = document.createElement('label')
     label.classList.add('label','border', 'border-Cool-gray', 'rounded-lg', 'hover:border-Purplish-blue', 'w-full', 'cursor-pointer', 'transition', 'duration-150', 'flex', 'items-center', 'gap-4', 'p-2')
@@ -7,6 +9,9 @@ export function addonCheckbox(title:string, description:string, price:number, ch
     input.type = 'checkbox'
     input.setAttribute('id', checkboxNameId)
     input.classList.add('accent-Marine-blue',)
+    input.addEventListener('change', function(){ 
+        this.checked ? addonState.getInstance().setAddon(title, price) : addonState.getInstance().removeAddon({title:title})   
+    })
     
     const addonContainer = document.createElement('div')
     const addonTitle = document.createElement('h1')

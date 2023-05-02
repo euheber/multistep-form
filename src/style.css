@@ -9,7 +9,7 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-/* w-64 min-h-[500px] rounded-lg p-6 flex flex-col space-y-5 */
+
 
 .label:has(input:checked){ 
   border: 1px solid hsl(243, 100%, 62%);
