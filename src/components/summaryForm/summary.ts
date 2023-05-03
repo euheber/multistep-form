@@ -38,16 +38,17 @@ export function summary():HTMLElement{
   container.append(header, planContainer)
 
   addons.forEach(item => {     
-    const div = addonResume(item.title, item.price)
+    const div = addonResume(item.title, item.price, PlanContext.getInstance().getPlan().type)
     container.append(div)
   })
 
 
   const total = document.createElement('div')
-  total.classList.add('mt-30', 'border')
+  total.classList.add('mt-30', 'ml-auto')
   const price = document.createElement('p')
-  const sum = addonState.getInstance().getAddon().reduce((acc:number, cur:{price:number})=>{ return acc + cur.price},0) +   PlanContext.getInstance().getPlan().price
-  price.textContent = `${sum}`
+  price.classList.add('font-bold', 'text-Purplish-blue')
+  const sum = addonState.getInstance().getAddon().reduce((acc:number, cur:{price:number})=>{ return acc + cur.price},0) + PlanContext.getInstance().getPlan().price
+  price.textContent = `Total: R$${sum},00`
   total.append(price)
 
   container.append(total)

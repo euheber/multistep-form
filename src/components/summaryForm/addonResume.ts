@@ -1,4 +1,4 @@
-export default function(title:string, price:number):HTMLDivElement{
+export default function(title:string, price:number, type: string):HTMLDivElement{
 
 
     const addonBox = document.createElement('div')
@@ -10,7 +10,7 @@ export default function(title:string, price:number):HTMLDivElement{
     
     const addonPrice = document.createElement('p')
     addonPrice.classList.add('text-md', 'font-semibold', 'text-Marine-blue')
-    addonPrice.textContent = `+R$${price},00/mês`
+    addonPrice.textContent = `+R$${price},00/${type}`
 
     addonBox.append(addonName, addonPrice)
 

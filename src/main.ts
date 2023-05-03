@@ -2,14 +2,14 @@ import { information } from "./components/informationForm/information"
 import { plan } from "./components/planForm/choosePlan"
 import { addonsForm } from "./components/addonsForm/addOnForm"
 import { summary } from "./components/summaryForm/summary"
-
+import done from "./components/doneComponent/done"
 
 const formSection = document.querySelector("#form") as HTMLDivElement
 const nextBtn = document.querySelector("#nextBtn") as HTMLButtonElement
 const returnBtn = document.querySelector("#returnBtn") as HTMLButtonElement
 const btns = document.querySelectorAll(".btn") as NodeListOf<HTMLButtonElement>
-
-const htmlList = [information, plan, addonsForm, summary]
+const controlFormBtns = document.querySelector('#control-form') as HTMLDivElement
+const htmlList = [information, plan, addonsForm, summary, done]
 let activeChild: HTMLElement;
 
 let activeForm = 0
@@ -55,12 +55,15 @@ const checkForm = ():Boolean =>{
 
 
 nextBtn.addEventListener("click", function (): void {
-  if (activeForm >=3) return
-  if(!checkForm()) return
-  
+if(!checkForm()) return
+
   currentStep()
   activeForm++
+  console.log(activeForm);
+  
   if (activeForm >=3) nextBtn.textContent = 'Finalizar'
+  if (activeForm == 4){controlFormBtns.classList.add('hidden')}
+  
   controlFormOfDisplay()
 })
 
