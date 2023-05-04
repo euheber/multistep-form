@@ -8,7 +8,7 @@ export default function ():HTMLDivElement{
 
 
     const title = document.createElement('h1')
-    title.classList.add('text-lg', 'font-bold', 'text-Marine-blue')
+    title.classList.add('text-lg','lg:text-3xl', 'font-bold', 'text-Marine-blue', 'mt-5')
     title.textContent = 'Obrigado!'
     
     container.append(img, title)
