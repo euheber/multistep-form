@@ -2,6 +2,8 @@ import PlanContext from "../../store/planState"
 import addonState from "../../store/addonState"
 import addonResume from "./addonResume"
 
+
+
 export function summary():HTMLElement{ 
   const addons = addonState.getInstance().getAddon()
 
@@ -54,5 +56,7 @@ export function summary():HTMLElement{
   container.append(total)
     return container
 }
+
+
 
 

@@ -59,10 +59,10 @@ if(!checkForm()) return
 
   currentStep()
   activeForm++
-  console.log(activeForm);
+
   
   if (activeForm >=3) nextBtn.textContent = 'Finalizar'
-  if (activeForm == 4){controlFormBtns.classList.add('hidden')}
+  if (activeForm == 4)controlFormBtns.classList.add('hidden')
   
   controlFormOfDisplay()
 })
